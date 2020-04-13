@@ -61,6 +61,7 @@
     "react/jsx-one-expression-per-line": "off",
     "react/display-name": "off",
     "react/prop-types": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off"
   }
 }
