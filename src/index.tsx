@@ -4,13 +4,17 @@ import App from 'containers/app'
 import { store } from 'stores/store'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker'
-import { GlobalStyle } from 'styled-components/global-styles'
+import { ThemeProvider } from 'styled-components'
+import { theme } from 'sc/theme'
+import { GlobalStyle } from 'sc/global-styles'
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <GlobalStyle />
-      <App />
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <App />
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
