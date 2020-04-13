@@ -234,6 +234,9 @@ const defaultProps: React.ComponentProps<typeof Maze> = {
     ['west'],
     [],
   ],
+  endPointPos: 143,
+  ponyStartingPos: 57,
+  domokunStartingPos: 31,
 }
 
 export const Default = () => <Maze {...defaultProps} />
