@@ -4,7 +4,7 @@ import * as s from './select.styles'
 import { SelectOption } from './utils/types'
 
 interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
-  options: SelectOption[]
+  options: SelectOption<string>[]
 }
 
 export const Select: FC<Props> = ({ onChange, options, ...rest }) => (
