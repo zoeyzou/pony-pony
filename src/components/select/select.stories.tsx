@@ -14,3 +14,5 @@ const defaultProps: React.ComponentProps<typeof Select> = {
 }
 
 export const Default = () => <Select {...defaultProps} />
+
+export const withTitle = () => <Select {...defaultProps} title="title" />

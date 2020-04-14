@@ -1,5 +1,9 @@
 import styled from 'styled-components/macro'
 
+export const SliderContainer = styled.div`
+  display: block;
+`
+
 export const SliderWrapper = styled.div`
   display: flex;
   align-items: center;

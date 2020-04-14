@@ -7,3 +7,5 @@ export default {
 }
 
 export const Default = () => <Slider />
+
+export const WithTitle = () => <Slider title="Slider" />
