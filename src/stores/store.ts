@@ -2,10 +2,12 @@ import { configureStore, ThunkAction, Action, getDefaultMiddleware } from '@redu
 
 import loggerMiddleware from './utils/logger'
 import counterReducer from './counter/slice'
+import settingsReducer from './settings/slice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
+    settings: settingsReducer,
   },
   middleware: [loggerMiddleware, ...getDefaultMiddleware()],
 })
