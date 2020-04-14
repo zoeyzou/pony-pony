@@ -62,7 +62,7 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier --write",
-    "lint": "eslint  --quiet --ext .js,.jsx,.ts,.tsx src"
+    "lint": "eslint --quiet --fix"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -89,7 +89,7 @@
       "npm run lint",
       "git add"
     ],
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "npm run prettier",
       "git add"
     ]
