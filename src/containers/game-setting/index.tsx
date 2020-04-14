@@ -3,14 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { Slider } from 'components/slider'
 import { Select } from 'components/select'
-import {
-  selectSizeRange,
-  selectWidth,
-  selectHeight,
-  selectDifficultyRange,
-  selectDifficulty,
-  selectPony,
-} from 'stores/settings/selectors'
+import { selectSizeRange, selectDifficultyRange, selectSettings } from 'stores/settings/selectors'
 import { changeWidth, changeHeight, changeDifficulty, changePony } from 'stores/settings/slice'
 import { getSelectOptionsForPony } from './utils/helpers'
 import * as s from './game-setting.styles'
@@ -19,11 +12,8 @@ import { Pony } from 'types/pony'
 export const GameSetting = () => {
   const dispatch = useDispatch()
   const sizeRange = useSelector(selectSizeRange)
-  const width = useSelector(selectWidth)
-  const height = useSelector(selectHeight)
   const levelRange = useSelector(selectDifficultyRange)
-  const level = useSelector(selectDifficulty)
-  const pony = useSelector(selectPony)
+  const { width, height, currentPony, difficultyLevel } = useSelector(selectSettings)
 
   return (
     <s.GameSettingWrapper>
@@ -44,12 +34,12 @@ export const GameSetting = () => {
       <Slider
         min={levelRange[0]}
         max={levelRange[1]}
-        value={level}
+        value={difficultyLevel}
         title="Difficulty"
         onChangeHandler={(val) => dispatch(changeDifficulty(val))}
       />
       <Select
-        defaultValue={(pony as string) || ''}
+        defaultValue={(currentPony as string) || ''}
         options={getSelectOptionsForPony()}
         onChangeHandler={(val) => dispatch(changePony(val as Pony))}
       />
