@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { SettingsState, Pony } from './types'
+import { SettingsState } from './types'
+import { Pony } from 'types/pony'
 
 const initialState: SettingsState = {
   minLength: 15, // these can also be get from the API
-  maxLength: 15,
+  maxLength: 25,
   width: 15,
   height: 15,
   minDifficulty: 0,
