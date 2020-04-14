@@ -1,5 +1,7 @@
 import { RootState } from '../store'
 
+export const selectSettings = (state: RootState) => state.settings
+
 export const selectSizeRange = (state: RootState) => [
   state.settings.minLength,
   state.settings.maxLength,

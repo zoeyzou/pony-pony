@@ -1,5 +1,7 @@
 import { RootState } from '../store'
 
+export const selectGame = (state: RootState) => state.game
+
 export const selectMaze = (state: RootState) => state.game.mazeData
 
 export const selectGameStatus = (state: RootState) => state.game.gameStatus
