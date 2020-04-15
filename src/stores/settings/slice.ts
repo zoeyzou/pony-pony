@@ -29,9 +29,21 @@ export const SettingsSlice = createSlice({
     changePony: (state, action: PayloadAction<Pony>) => {
       state.currentPony = action.payload
     },
+    resetSettings: (state) => {
+      state.width = 15
+      state.height = 15
+      state.difficultyLevel = 0
+      state.currentPony = null
+    },
   },
 })
 
-export const { changeWidth, changeHeight, changeDifficulty, changePony } = SettingsSlice.actions
+export const {
+  changeWidth,
+  changeHeight,
+  changeDifficulty,
+  changePony,
+  resetSettings,
+} = SettingsSlice.actions
 
 export default SettingsSlice.reducer
