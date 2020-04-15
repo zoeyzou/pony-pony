@@ -10,12 +10,12 @@ import { GlobalStyle } from 'sc/global-styles'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Provider store={store}>
         <App />
-      </ThemeProvider>
-    </Provider>
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
