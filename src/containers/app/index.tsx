@@ -1,8 +1,20 @@
 import React from 'react'
-import { Counter } from 'containers/counter'
+import { GameSetting } from 'containers/game-setting'
+import { Game } from 'containers/game'
 
-function App() {
-  return <Counter />
+import * as s from './app.styles'
+import { Button } from 'components/button'
+
+const App = () => {
+  return (
+    <s.PageLayout>
+      <Game />
+      <GameSetting />
+      <s.Buttonwrapper>
+        <Button>Button</Button>
+      </s.Buttonwrapper>
+    </s.PageLayout>
+  )
 }
 
 export default App
