@@ -13,4 +13,8 @@ export const theme = {
     title: "'Lobster Two', cursive",
     body: "'Arvo', serif",
   },
+  breakpoints: {
+    tablet: '768px',
+    mobile: '420px',
+  },
 }

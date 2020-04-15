@@ -12,11 +12,32 @@ export const PageLayout = styled.main`
     'game setting'
     'game button';
   grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr auto;
   grid-gap: 5vw;
 
   > * {
     display: grid;
     grid-gap: 2.5vw;
     align-content: center;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    grid-template-areas:
+      'game game'
+      'setting button';
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-gap: 2vh;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    margin: 8vh 4vw;
+    grid-template-areas:
+      'game'
+      'setting'
+      'button';
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    grid-gap: 2vh;
   }
 `
