@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import { Props } from './index'
 
 export const StyledButton = styled.button<Props>`
+  width: 100%;
   appearance: none;
   background: none;
   font-size: 32px;
