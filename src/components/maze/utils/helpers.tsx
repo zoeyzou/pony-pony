@@ -18,7 +18,7 @@ export function isMazeWall(index: number, size: MazeSize): Direction[] | null {
     directions.push(Direction.west)
   }
 
-  if (index % width === 14) {
+  if (index % width === width - 1) {
     directions.push(Direction.east)
   }
 
