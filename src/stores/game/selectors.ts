@@ -14,3 +14,10 @@ export const selectExit = (state: RootState) => state.game.exit
 
 export const selectFetchPending = (state: RootState) =>
   state.game.fetchingState.game === 'pending' || state.game.fetchingState.movement === 'pending'
+
+export const selectHasStarted = (state: RootState) =>
+  state.game.ponyPos !== null &&
+  state.game.domokunPos !== null &&
+  state.game.exit !== null &&
+  state.game.mazeData.length > 0 &&
+  state.game.gameStatus !== 'preparing'

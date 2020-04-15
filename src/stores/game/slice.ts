@@ -33,6 +33,7 @@ export const gameSlice = createSlice({
       state.ponyPos = ponyPos
       state.domokunPos = domokunPos
       state.exit = exit
+      state.gameStatus = 'active'
     },
     startFetching: (state, action: PayloadAction<FetchingKey>) => {
       state.fetchingState[action.payload] = 'pending'
@@ -54,6 +55,15 @@ export const gameSlice = createSlice({
       state.ponyPos = ponyPos
       state.domokunPos = domokunPos
     },
+    resetGame: (state) => {
+      state.gameId = null
+      state.mazeData = []
+      state.gameStatus = 'preparing'
+      state.ponyPos = null
+      state.domokunPos = null
+      state.exit = null
+      state.fetchingState = { game: 'finish', movement: 'finish' }
+    },
   },
 })
 
@@ -65,6 +75,7 @@ export const {
   finishFetching,
   setGameStatus,
   updateGame,
+  resetGame,
 } = gameSlice.actions
 
 export const { getGameThunk, movePonyThunk } = thunks
