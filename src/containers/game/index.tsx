@@ -1,20 +1,29 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, ReactNode } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Maze } from 'components/maze'
 import { Image } from 'components/image'
-import { selectGame, selectFetchPending, selectHasStarted } from 'stores/game/selectors'
+import {
+  selectGame,
+  selectFetchPending,
+  selectHasStarted,
+  selectUrl,
+  selectHasFinished,
+} from 'stores/game/selectors'
 import { selectSettings } from 'stores/settings/selectors'
 import { movePonyThunk } from 'stores/game/slice'
 import * as helpers from 'utils/keyboard-actions'
 
 import * as s from './game.styles'
+import { IMG_BASE_URL } from './utils/constants'
 
 export const Game: FC = () => {
   const dispatch = useDispatch()
   const { width, height } = useSelector(selectSettings)
   const { mazeData, exit, ponyPos, domokunPos } = useSelector(selectGame)
   const hasStarted = useSelector(selectHasStarted)
+  const hasFinished = useSelector(selectHasFinished)
   const isFetching = useSelector(selectFetchPending)
+  const gameEndUrl = useSelector(selectUrl)
 
   useEffect(() => {
     const keyPressHandler = (evt: KeyboardEvent) => {
@@ -33,14 +42,23 @@ export const Game: FC = () => {
       }
     }
 
-    document.addEventListener('keydown', keyPressHandler)
+    if (hasStarted) {
+      document.addEventListener('keydown', keyPressHandler)
+    }
     return () => document.removeEventListener('keydown', keyPressHandler)
-  }, [isFetching])
+  }, [isFetching, hasStarted, dispatch])
+
+  let image: ReactNode = null
+  if (!hasStarted) {
+    image = <Image src={`${process.env.PUBLIC_URL}/img/cover.png`} />
+  } else if (hasFinished) {
+    image = <Image src={`${IMG_BASE_URL}${gameEndUrl}`} />
+  }
 
   return (
     <s.GameWrapper>
-      {!hasStarted && <Image src={`${process.env.PUBLIC_URL}/img/cover.png`} />}
-      {hasStarted && (
+      {image}
+      {hasStarted && !hasFinished && (
         <Maze
           size={[width, height]}
           data={mazeData}

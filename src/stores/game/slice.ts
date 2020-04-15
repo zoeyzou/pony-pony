@@ -46,6 +46,9 @@ export const gameSlice = createSlice({
     },
     setGameStatus: (state, action: PayloadAction<State>) => {
       state.gameStatus = action.payload.state
+      if (action.payload.state === 'won' || action.payload.state === 'over') {
+        state.hiddenUrl = action.payload['hidden-url']
+      }
     },
     updateGame: (state, action: PayloadAction<MazeResponse>) => {
       const {
@@ -63,6 +66,7 @@ export const gameSlice = createSlice({
       state.domokunPos = null
       state.exit = null
       state.fetchingState = { game: 'finish', movement: 'finish' }
+      state.hiddenUrl = undefined
     },
   },
 })

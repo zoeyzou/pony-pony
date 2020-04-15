@@ -13,6 +13,7 @@ export interface GameState {
   domokunPos: number | null
   exit: number | null
   fetchingState: { [key in FetchingKey]: FetchingState }
+  hiddenUrl?: string
 }
 
 export interface GameRequestBody {

@@ -21,3 +21,8 @@ export const selectHasStarted = (state: RootState) =>
   state.game.exit !== null &&
   state.game.mazeData.length > 0 &&
   state.game.gameStatus !== 'preparing'
+
+export const selectHasFinished = (state: RootState) =>
+  state.game.hiddenUrl && (state.game.gameStatus === 'won' || state.game.gameStatus === 'over')
+
+export const selectUrl = (state: RootState) => state.game.hiddenUrl
