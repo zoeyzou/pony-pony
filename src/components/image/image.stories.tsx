@@ -13,6 +13,6 @@ const defaultProps: React.ComponentProps<typeof Image> = {
 
 export const Default = () => (
   <div style={{ width: '300px' }}>
-    <Image {...defaultProps} width="100%" />
+    <Image {...defaultProps} />
   </div>
 )
