@@ -5,21 +5,30 @@ import { Props as CellProps } from './components/maze-cell'
 import { Direction } from 'types/directions'
 
 export const Maze = styled.div<Pick<Props, 'size'>>`
+  max-width: 55vw;
   display: grid;
   grid-template-columns: ${({ size }) => `repeat(${size![0]}, minmax(10px, 1fr))`};
-  grid-template-rows: ${({ size }) => `repeat(${size![1]}, minmax(10px, 1fr))`};
+  grid-auto-rows: 1fr;
 
-  > *::after {
+  &::before {
     content: '';
+    width: 0;
     padding-bottom: 100%;
-    display: block;
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+  }
+
+  & > *:first-child {
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
   }
 `
+
 export const CellWrapper = styled.div<CellProps>`
   position: relative;
   overflow: hidden;
   box-sizing: border-box;
-  margin: -0.25vw;
+  margin: -0.2vw;
   border-color: ${({ theme }) => theme.colors.dark['shade-100']};
 
   ${({ walls }) =>
