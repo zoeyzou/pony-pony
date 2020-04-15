@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
    body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-         'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+      font-family: ${({ theme }) => theme.font.body};
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       background-image: url(${process.env.PUBLIC_URL}/img/dot-background.png);

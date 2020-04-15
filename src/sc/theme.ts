@@ -9,4 +9,8 @@ export const theme = {
       'shade-100': '#F8FAFF',
     },
   },
+  font: {
+    title: "'Lobster Two', cursive",
+    body: "'Arvo', serif",
+  },
 }
