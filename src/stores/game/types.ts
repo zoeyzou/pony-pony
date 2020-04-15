@@ -2,6 +2,7 @@ import { State, Maze } from 'types/maze'
 import { Pony } from 'types/pony'
 
 export type GameStatus = State | 'preparing'
+export type FetchingKey = 'game' | 'movement'
 export type FetchingState = 'pending' | 'error' | 'finish'
 
 export interface GameState {
@@ -11,7 +12,7 @@ export interface GameState {
   ponyPos: number | null
   domokunPos: number | null
   exit: number | null
-  fetchingState: FetchingState
+  fetchingState: { [key in FetchingKey]: FetchingState }
 }
 
 export interface GameRequestBody {

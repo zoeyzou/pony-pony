@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { MazeResponse } from 'types/maze'
-import { GameState } from './types'
+import { MazeResponse, GameState as State } from 'types/maze'
+import { GameState, FetchingKey } from './types'
 
 import * as thunks from './thunks'
 
@@ -12,7 +12,7 @@ const initialState: GameState = {
   ponyPos: null,
   domokunPos: null,
   exit: null,
-  fetchingState: 'finish',
+  fetchingState: { game: 'finish', movement: 'finish' },
 }
 
 export const gameSlice = createSlice({
@@ -34,14 +34,25 @@ export const gameSlice = createSlice({
       state.domokunPos = domokunPos
       state.exit = exit
     },
-    startFetching: (state) => {
-      state.fetchingState = 'pending'
+    startFetching: (state, action: PayloadAction<FetchingKey>) => {
+      state.fetchingState[action.payload] = 'pending'
     },
-    finishFetching: (state) => {
-      state.fetchingState = 'finish'
+    finishFetching: (state, action: PayloadAction<FetchingKey>) => {
+      state.fetchingState[action.payload] = 'finish'
     },
-    errorFetching: (state) => {
-      state.fetchingState = 'error'
+    errorFetching: (state, action: PayloadAction<FetchingKey>) => {
+      state.fetchingState[action.payload] = 'error'
+    },
+    setGameStatus: (state, action: PayloadAction<State>) => {
+      state.gameStatus = action.payload.state
+    },
+    updateGame: (state, action: PayloadAction<MazeResponse>) => {
+      const {
+        pony: [ponyPos],
+        domokun: [domokunPos],
+      } = action.payload
+      state.ponyPos = ponyPos
+      state.domokunPos = domokunPos
     },
   },
 })
@@ -52,8 +63,10 @@ export const {
   startFetching,
   errorFetching,
   finishFetching,
+  setGameStatus,
+  updateGame,
 } = gameSlice.actions
 
-export const { getGameThunk } = thunks
+export const { getGameThunk, movePonyThunk } = thunks
 
 export default gameSlice.reducer

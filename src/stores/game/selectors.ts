@@ -11,3 +11,6 @@ export const selectPonyPos = (state: RootState) => state.game.ponyPos
 export const selectDomokunPos = (state: RootState) => state.game.domokunPos
 
 export const selectExit = (state: RootState) => state.game.exit
+
+export const selectFetchPending = (state: RootState) =>
+  state.game.fetchingState.game === 'pending' || state.game.fetchingState.movement === 'pending'
