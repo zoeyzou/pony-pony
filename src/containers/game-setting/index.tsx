@@ -13,7 +13,12 @@ export const GameSetting = () => {
   const dispatch = useDispatch()
   const sizeRange = useSelector(selectSizeRange)
   const levelRange = useSelector(selectDifficultyRange)
-  const { width, height, currentPony, difficultyLevel } = useSelector(selectSettings)
+  const { width, currentPony, difficultyLevel } = useSelector(selectSettings)
+
+  const changeSize = (val: number) => {
+    dispatch(changeWidth(val))
+    dispatch(changeHeight(val))
+  }
 
   return (
     <s.GameSettingWrapper>
@@ -21,15 +26,8 @@ export const GameSetting = () => {
         min={sizeRange[0]}
         max={sizeRange[1]}
         value={width}
-        title="Width"
-        onChangeHandler={(val) => dispatch(changeWidth(val))}
-      />
-      <Slider
-        min={sizeRange[0]}
-        max={sizeRange[1]}
-        value={height}
-        title="Height"
-        onChangeHandler={(val) => dispatch(changeHeight(val))}
+        title="Size"
+        onChangeHandler={changeSize}
       />
       <Slider
         min={levelRange[0]}
