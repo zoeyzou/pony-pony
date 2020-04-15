@@ -7,10 +7,10 @@ export const GameSettingWrapper = styled.section`
 
 export const InstructionWrapper = styled.div`
   text-align: center;
-  font-family: ${({ theme }) => theme.font.title};
+  font-family: ${({ theme }) => theme.fonts.title};
   font-size: 16px;
 
   & > p {
-    font-family: ${({ theme }) => theme.font.body};
+    font-family: ${({ theme }) => theme.fonts.body};
   }
 `

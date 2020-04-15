@@ -6,7 +6,7 @@ export const StyledButton = styled.button<Props>`
   width: 100%;
   appearance: none;
   background: none;
-  font-family: ${({ theme }) => theme.font.body};
+  font-family: ${({ theme }) => theme.fonts.body};
   font-size: 32px;
   font-weight: bolder;
   padding-left: 12px;

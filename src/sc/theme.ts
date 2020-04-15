@@ -9,7 +9,7 @@ export const theme = {
       'shade-100': '#F8FAFF',
     },
   },
-  font: {
+  fonts: {
     title: "'Lobster Two', cursive",
     body: "'Arvo', serif",
   },
