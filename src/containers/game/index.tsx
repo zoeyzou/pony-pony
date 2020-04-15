@@ -12,6 +12,7 @@ import {
 import { selectSettings } from 'stores/settings/selectors'
 import { movePonyThunk } from 'stores/game/slice'
 import * as helpers from 'utils/keyboard-actions'
+import ponyCover from 'assets/img/cover.png'
 
 import * as s from './game.styles'
 import { IMG_BASE_URL } from './utils/constants'
@@ -50,7 +51,7 @@ export const Game: FC = () => {
 
   let image: ReactNode = null
   if (!hasStarted) {
-    image = <Image src={`${process.env.PUBLIC_URL}/img/cover.png`} />
+    image = <Image src={ponyCover} />
   } else if (hasFinished) {
     image = <Image src={`${IMG_BASE_URL}${gameEndUrl}`} />
   }

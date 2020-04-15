@@ -1,5 +1,8 @@
 import React, { FC } from 'react'
 import { Image } from 'components/image'
+import pony from 'assets/img/pony.png'
+import domokun from 'assets/img/domokun.png'
+import exit from 'assets/img/exit.png'
 
 interface Props {
   type: 'pony' | 'exit' | 'domokun'
@@ -8,11 +11,11 @@ interface Props {
 export const Pawn: FC<Props> = ({ type }) => {
   switch (type) {
     case 'pony':
-      return <Image src={`${process.env.PUBLIC_URL}/img/pony.png`} />
+      return <Image src={pony} />
     case 'domokun':
-      return <Image src={`${process.env.PUBLIC_URL}/img/domokun.png`} />
+      return <Image src={domokun} />
     case 'exit':
-      return <Image src={`${process.env.PUBLIC_URL}/img/exit.png`} />
+      return <Image src={exit} />
     default:
       return null
   }
