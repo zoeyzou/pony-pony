@@ -20,7 +20,3 @@ export const PageLayout = styled.main`
     align-content: center;
   }
 `
-
-export const Buttonwrapper = styled.section`
-  grid-area: button;
-`
