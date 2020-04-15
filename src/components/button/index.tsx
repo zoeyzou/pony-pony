@@ -7,7 +7,7 @@ export interface Props extends React.ComponentPropsWithRef<'button'> {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, Props>(
-  ({ ariaLabel, type, onClick, children, ...rest }, ref) => {
+  ({ ariaLabel, type, onClick, children, disabled, ...rest }, ref) => {
     return (
       <s.StyledButton
         {...rest}
@@ -15,6 +15,7 @@ export const Button = React.forwardRef<HTMLButtonElement, Props>(
         ref={ref}
         aria-label={ariaLabel || 'generic button'}
         onClick={onClick}
+        disabled={disabled}
       >
         {children}
       </s.StyledButton>

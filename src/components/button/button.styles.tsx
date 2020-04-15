@@ -6,7 +6,9 @@ export const StyledButton = styled.button<Props>`
   width: 100%;
   appearance: none;
   background: none;
+  font-family: ${({ theme }) => theme.font.body};
   font-size: 32px;
+  font-weight: bolder;
   padding-left: 12px;
   padding-right: 12px;
   outline: none;
@@ -25,5 +27,16 @@ export const StyledButton = styled.button<Props>`
 
   &:active {
     background-color: rgba(112, 76, 182, 0.2);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    color: rgba(112, 76, 182, 0.4);
+
+    &:hover,
+    &:focus {
+      border: 2px solid transparent;
+      color: rgba(112, 76, 182, 0.4);
+    }
   }
 `
