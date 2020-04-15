@@ -5,7 +5,7 @@ export const GameSettingWrapper = styled.section`
   padding: 1vh 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    overflow: scroll;
+    overflow-y: auto;
   }
 `
 
@@ -13,7 +13,7 @@ export const InstructionWrapper = styled.div`
   text-align: center;
   font-family: ${({ theme }) => theme.fonts.title};
   font-size: 16px;
-  overflow: scroll;
+  overflow-y: auto;
 
   & > p {
     font-family: ${({ theme }) => theme.fonts.body};
