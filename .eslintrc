@@ -63,5 +63,14 @@
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["src/stores/**/*.ts"],
+      "rules": {
+        "no-param-reassign": "off",
+        "import/no-cycle": "off"
+      }
+    }
+  ]
 }
