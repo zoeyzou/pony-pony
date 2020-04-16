@@ -89,5 +89,5 @@ Manually lint for all files. Included in the lint-staged setting.
 ## Thoughts on improving backend
 
 - The returning value while setting pony name can be more descriptive so the frontend can give more meaningful error (instead of `only pony can play`)
-- The range of size and difficulty can be separated into another endpoint so while loading the setting page, the range can be rendered in the UI so the user do not need to make blind decision (this is also the reason why I stored those values in the state)
+- The range of size and difficulty as well as available ponies can be separated into another endpoint so while loading the setting page, the range can be rendered in the UI so the user do not need to make blind decision (this is also the reason why I stored those values in the state)
 - For each movement, the returning value should include the new location of pony and domokun so there's no need to load the whole game data, it can be very big data set that gets loaded repeatedly
