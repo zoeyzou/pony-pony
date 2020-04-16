@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/pony-pony/static/js/main.a4461df4.chunk.js",
+    "main.js.map": "/pony-pony/static/js/main.a4461df4.chunk.js.map",
+    "runtime-main.js": "/pony-pony/static/js/runtime-main.705d090e.js",
+    "runtime-main.js.map": "/pony-pony/static/js/runtime-main.705d090e.js.map",
+    "static/js/2.49431cf5.chunk.js": "/pony-pony/static/js/2.49431cf5.chunk.js",
+    "static/js/2.49431cf5.chunk.js.map": "/pony-pony/static/js/2.49431cf5.chunk.js.map",
+    "index.html": "/pony-pony/index.html",
+    "precache-manifest.165b303db1b536364a013b19a7ded390.js": "/pony-pony/precache-manifest.165b303db1b536364a013b19a7ded390.js",
+    "service-worker.js": "/pony-pony/service-worker.js",
+    "static/js/2.49431cf5.chunk.js.LICENSE.txt": "/pony-pony/static/js/2.49431cf5.chunk.js.LICENSE.txt",
+    "static/media/cover.png": "/pony-pony/static/media/cover.c0a12c3f.png",
+    "static/media/domokun.png": "/pony-pony/static/media/domokun.a3285734.png",
+    "static/media/dot-background.png": "/pony-pony/static/media/dot-background.3a79f8be.png",
+    "static/media/exit.png": "/pony-pony/static/media/exit.a2390211.png",
+    "static/media/pony.png": "/pony-pony/static/media/pony.b321278a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.705d090e.js",
+    "static/js/2.49431cf5.chunk.js",
+    "static/js/main.a4461df4.chunk.js"
+  ]
+}
