@@ -9,6 +9,7 @@ export const SliderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 `
 
 export const Slider = styled.input`
@@ -34,13 +35,18 @@ export const Slider = styled.input`
     border-radius: 30px;
     box-shadow: 0px 0px 3px darkgreen;
     transition: all 0.5s ease;
-    position: relative;
 
     &:hover,
     &:active {
       transform: scale(1.05);
     }
   }
+`
+
+export const Output = styled.output<{ show: boolean }>`
+  display: ${({ show }) => (show ? 'block' : 'none')};
+  position: absolute;
+  left: calc(50% - 10px);
 `
 
 export const Display = styled.span`

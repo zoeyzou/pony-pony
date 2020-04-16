@@ -6,6 +6,8 @@ import { Label } from 'components/label'
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   value?: number
   onChangeHandler?: (val: number) => void
+  max?: number
+  min?: number
 }
 
 export const Slider: FC<Props> = ({
@@ -46,6 +48,7 @@ export const Slider: FC<Props> = ({
           onMouseUp={() => setPressed(false)}
           onChange={changeHandler}
         />
+        <s.Output show={isPressed}>{val}</s.Output>
         <s.Display>{max}</s.Display>
       </s.SliderWrapper>
     </s.SliderContainer>
