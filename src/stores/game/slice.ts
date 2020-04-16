@@ -28,12 +28,13 @@ export const gameSlice = createSlice({
         pony: [ponyPos],
         domokun: [domokunPos],
         'end-point': [exit],
+        'game-state': { state: gameState },
       } = action.payload
       state.mazeData = data
       state.ponyPos = ponyPos
       state.domokunPos = domokunPos
       state.exit = exit
-      state.gameStatus = 'active'
+      state.gameStatus = gameState.toLowerCase() as GameState['gameStatus'] // the data from backend is not consistent
     },
     startFetching: (state, action: PayloadAction<FetchingKey>) => {
       state.fetchingState[action.payload] = 'pending'
