@@ -44,6 +44,7 @@ export const Select: FC<Props> = ({
           </s.Option>
         ))}
       </s.Select>
+      <s.Arrow>&gt;</s.Arrow>
     </s.SelectWrapper>
   )
 }

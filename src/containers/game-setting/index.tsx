@@ -44,6 +44,7 @@ export const GameSetting = () => {
             onChangeHandler={(val) => dispatch(changeDifficulty(val))}
           />
           <Select
+            title="Choose a pony"
             defaultValue={(currentPony as string) || ''}
             options={getSelectOptionsForPony()}
             onChangeHandler={(val) => dispatch(changePony(val as Pony))}
