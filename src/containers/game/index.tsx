@@ -19,7 +19,7 @@ import { IMG_BASE_URL } from './utils/constants'
 
 export const Game: FC = () => {
   const dispatch = useDispatch()
-  const { width, height } = useSelector(selectSettings)
+  const { width, height, currentPony } = useSelector(selectSettings)
   const { mazeData, exit, ponyPos, domokunPos } = useSelector(selectGame)
   const hasStarted = useSelector(selectHasStarted)
   const hasFinished = useSelector(selectHasFinished)
@@ -61,6 +61,7 @@ export const Game: FC = () => {
       {image}
       {hasStarted && !hasFinished && (
         <Maze
+          pony={currentPony!}
           size={[width, height]}
           data={mazeData}
           domokunStartingPos={domokunPos!}

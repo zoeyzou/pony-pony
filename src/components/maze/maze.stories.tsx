@@ -1,4 +1,5 @@
 import React from 'react'
+import { Pony } from 'types/pony'
 import { Maze } from '.'
 
 export default {
@@ -237,6 +238,7 @@ const defaultProps: React.ComponentProps<typeof Maze> = {
   endPointPos: 143,
   ponyStartingPos: 57,
   domokunStartingPos: 31,
+  pony: Pony.applejack,
 }
 
 export const Default = () => <Maze {...defaultProps} />

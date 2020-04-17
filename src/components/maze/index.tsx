@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { MazeSize, Maze as MazeData } from 'types/maze'
+import { Pony } from 'types/pony'
 
 import * as s from './maze.styles'
 import * as helpers from './utils/helpers'
@@ -12,6 +13,7 @@ export interface Props {
   endPointPos: number
   ponyStartingPos: number
   domokunStartingPos: number
+  pony: Pony
 }
 
 export const Maze: FC<Props> = ({
@@ -20,13 +22,14 @@ export const Maze: FC<Props> = ({
   endPointPos,
   ponyStartingPos,
   domokunStartingPos,
+  pony,
 }) => {
   return (
     <s.Maze size={size}>
       {data.map((cell, index) => (
         <MazeCell key={index} walls={helpers.getCellWalls(cell, index, size)}>
           {endPointPos === index && <Pawn type="exit" />}
-          {ponyStartingPos === index && <Pawn type="pony" />}
+          {ponyStartingPos === index && <Pawn type={pony} />}
           {domokunStartingPos === index && <Pawn type="domokun" />}
         </MazeCell>
       ))}
