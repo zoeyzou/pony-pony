@@ -1,6 +1,6 @@
 This is my react project template set up with `create react app` and its `redux-typescript` template; added with `eslint` & `prettier` for linting and formating, `jest dom` and `jest axe` for testing, `styled-components` for styling, `storybook` with its various add-ons for component developing.
 
-Deployed onto Github page as: https://zoeyzou.github.io/pony-pony/
+Deployed onto Github page as: https://zoeyzou.github.io/pony-pony/, added workflow in github actions.
 
 ## Structure
 
