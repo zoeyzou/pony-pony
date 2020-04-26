@@ -1,15 +1,20 @@
 name: Deploye to Github page
-on: [push]
+
+on:
+  push:
+    branches:
+      - source
+
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
-        with:
-          persist-credentials: false
+      - uses: actions/checkout@v2
 
-      - name: Deploy 🔧 
-        run: |
+      - run: |
           npm install
-          npm run deploy
+          npm run build
+
+      - name: Deploy 🔧
+        uses: peaceiris/actions-gh-pages@v3
+        github_token: ${{ secrets.GITHUB_TOKEN }}
