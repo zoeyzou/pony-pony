@@ -45,6 +45,7 @@ export const GameSetting = () => {
           />
           <Select
             title="Choose a pony"
+            placeholder="Choose a pony"
             defaultValue={(currentPony as string) || ''}
             options={getSelectOptionsForPony()}
             onChangeHandler={(val) => dispatch(changePony(val as Pony))}
