@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/pony-pony/static/js/main.fb6bd763.chunk.js",
-    "main.js.map": "/pony-pony/static/js/main.fb6bd763.chunk.js.map",
+    "main.js": "/pony-pony/static/js/main.4466083b.chunk.js",
+    "main.js.map": "/pony-pony/static/js/main.4466083b.chunk.js.map",
     "runtime-main.js": "/pony-pony/static/js/runtime-main.81940ee9.js",
     "runtime-main.js.map": "/pony-pony/static/js/runtime-main.81940ee9.js.map",
     "static/js/2.7b7ab373.chunk.js": "/pony-pony/static/js/2.7b7ab373.chunk.js",
@@ -25,7 +25,7 @@
     "static/js/11.dc7dc884.chunk.js": "/pony-pony/static/js/11.dc7dc884.chunk.js",
     "static/js/11.dc7dc884.chunk.js.map": "/pony-pony/static/js/11.dc7dc884.chunk.js.map",
     "index.html": "/pony-pony/index.html",
-    "precache-manifest.68d59a12d87cb963a792b2f91f7c4958.js": "/pony-pony/precache-manifest.68d59a12d87cb963a792b2f91f7c4958.js",
+    "precache-manifest.749a57186193ee4f8e3d3bff928af9f7.js": "/pony-pony/precache-manifest.749a57186193ee4f8e3d3bff928af9f7.js",
     "service-worker.js": "/pony-pony/service-worker.js",
     "static/js/2.7b7ab373.chunk.js.LICENSE.txt": "/pony-pony/static/js/2.7b7ab373.chunk.js.LICENSE.txt",
     "static/media/applejack.png": "/pony-pony/static/media/applejack.a5b8b4e8.png",
@@ -43,6 +43,6 @@
   "entrypoints": [
     "static/js/runtime-main.81940ee9.js",
     "static/js/2.7b7ab373.chunk.js",
-    "static/js/main.fb6bd763.chunk.js"
+    "static/js/main.4466083b.chunk.js"
   ]
 }
