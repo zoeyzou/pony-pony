@@ -17,7 +17,7 @@ export const StyledButton = styled.button<Props>`
   padding-bottom: 4px;
   cursor: pointer;
   background-color: rgba(112, 76, 182, 0.1);
-  border-radius: 2px;
+  border-radius: 4px;
   transition: all 0.15s;
 
   &:hover,
