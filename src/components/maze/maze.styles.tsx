@@ -5,7 +5,7 @@ import { Props as CellProps } from './components/maze-cell'
 import { Direction } from 'types/directions'
 
 export const Maze = styled.div<Pick<Props, 'size'>>`
-  max-width: 80vh;
+  max-width: 60vh;
   display: grid;
   grid-template-columns: ${({ size }) => `repeat(${size![0]}, minmax(10px, 1fr))`};
   grid-auto-rows: 1fr;
