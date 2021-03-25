@@ -34,6 +34,7 @@
     "@typescript-eslint/parser": "2.27.0",
     "babel-eslint": "10.1.0",
     "babel-plugin-macros": "^2.8.0",
+    "chromatic": "^5.7.0",
     "eslint": "6.8.0",
     "eslint-config-airbnb-typescript": "7.2.1",
     "eslint-config-prettier": "6.10.1",
@@ -66,7 +67,8 @@
     "prettier": "prettier --write",
     "lint": "eslint --quiet --fix",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "chromatic": "npx chromatic --project-token 6b0fa7155b6f"
   },
   "eslintConfig": {
     "extends": "react-app"
