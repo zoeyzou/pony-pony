@@ -15,7 +15,7 @@ export const Select = styled.select`
   width: 100%;
   max-width: 100%;
   padding: 4px 8px;
-  margin: 5px 10px;
+  margin: 5px 0;
   border: none;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.1);
